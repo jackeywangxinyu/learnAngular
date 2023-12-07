@@ -1,0 +1,26 @@
+<div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+  <h3>For my dear Angry King</h3>
+  <div class="example-button-row">
+    <button mat-fab extended color="primary">
+      <mat-icon>favorite</mat-icon>
+      Change Formula
+    </button>
+  </div>
+
+  <mat-form-field class="example-form-field">
+    <mat-label>{{calculator.formula}}</mat-label>
+    <input matInput type="text" [(ngModel)]="calculator.inputValue">
+    @if (!!calculator.inputValue) {
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="calculator.inputValue=0">
+      <mat-icon>clear</mat-icon>
+    </button>
+    }
+  </mat-form-field>
+  <div style="font-size: 30px">
+    {{calculate(calculator.inputValue, calculator.formula)}}
+    <span style="font-size: 15px">RMB</span>
+  </div>
+  
+
+
+</div>
